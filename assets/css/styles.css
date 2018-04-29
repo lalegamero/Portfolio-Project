@@ -54,7 +54,7 @@ header .wrapper {
 /** End Header Section **/
 /** Hero Section **/
 .hero-section {
-    height: 650px;
+    max-height: calc(100vh - 140px);
     overflow: hidden;
 }
 
@@ -91,6 +91,8 @@ header .wrapper {
 .feature-card a:hover h3 {
     color: #7d97ad;
 }
+
+
 
 .feature-card h3 {
     color: #02b3e4;
@@ -212,5 +214,27 @@ footer {
 
     .quote-container p {
       font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header-info h1 {
+      font: 500 30px Quicksand;
+    }
+
+    .header-info h3 {
+      text-align: center;
+      font-weight: 400;
+    }
+    .features {
+      padding-top: 30px;
+    }
+
+    .feature-card {
+      padding: 0 20px 0 20px;
+    }
+
+    .feature-card img {
+      width: 100%;
     }
 }
