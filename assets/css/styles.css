@@ -54,12 +54,25 @@ header .wrapper {
 /** End Header Section **/
 /** Hero Section **/
 .hero-section {
-    max-height: calc(100vh - 140px);
-    overflow: hidden;
+    background: #ccc url('../img/hero-photo@1x.jpg') center center / cover no-repeat;
+    height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.hero-section img {
-    width: 100%;
+.hero-section h2 {
+    font: 700 50px Quicksand;
+}
+
+.hero-section p {
+    font: 700 25px Quicksand;
+    margin: 15px 0 80px 0;
+}
+
+.hero-section > * {
+    color: #fff;
 }
 
 /** Features Section **/
@@ -195,6 +208,18 @@ footer {
       font-size: 35px;
       margin-bottom: 5px;
   }
+
+  .hero-section > * {
+      width: 70%;
+  }
+
+  .hero-section h2 {
+      font-size: 40px;
+  }
+
+  .hero-section p {
+      font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -210,6 +235,14 @@ footer {
       text-align: center;
     }
 
+    .hero-section {
+      height: calc(100vh - 226px);
+    }
+
+    .hero-section > * {
+        width: 90%;
+    }
+
     .quote-container h2 {
       font-size: 1.3em;
     }
@@ -223,7 +256,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
     .header-info h1 {
       font: 500 30px Quicksand;
     }
@@ -232,6 +265,20 @@ footer {
       text-align: center;
       font-weight: 400;
     }
+
+    .hero-section {
+      text-align: center;
+    }
+
+    .hero-section h2 {
+      font-size: 32px;
+    }
+
+    .hero-section p {
+      font-size: 18px;
+      margin-bottom: 80px;
+    }
+
     .features {
       padding-top: 30px;
     }
