@@ -92,7 +92,13 @@ header .wrapper {
     color: #7d97ad;
 }
 
+.feature-card img {
+    transition: all 0.3s linear;
+}
 
+.feature-card a:hover img {
+    transform: scale(0.96, 0.96);
+}
 
 .feature-card h3 {
     color: #02b3e4;
