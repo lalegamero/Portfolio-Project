@@ -20,59 +20,52 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
-/** Header Section **/
-header {
-    border-bottom: solid 3px #79a;
+img {
+  max-width: 100%;
 }
 
-header .wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+/** Header Section **/
+header.wrapper {
+    padding: 10px;
+    text-align: center;
 }
 
 .header-logo {
     background: url('../img/AGLogo.svg') center/contain no-repeat;
     width: 150px;
     height: 100px;
+    margin: 0 auto;
 }
 
 .header-info h1 {
-    font: 300 50px/1.4 Quicksand;
+    font: 700 30px/1.4 Quicksand;
+    text-transform: uppercase;
+    margin: 10px 0;
 }
 
 .header-info h3 {
     font-weight: 500;
-    text-align: right;
 }
 
-.header-info h1, h3 {
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0;
-}
 /** End Header Section **/
+
 /** Hero Section **/
 .hero-section {
-    background: #ccc url('../img/hero-photo@1x.jpg') center center / cover no-repeat;
-    height: calc(100vh - 140px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    background: #ccc url('../img/hero-photo@0,5x.jpg') center center / cover no-repeat;
+    height: calc(100vh - 225px);
+    color: #000;
+    border-top: solid 3px #79a;
+    text-align: center;
+    padding: 25px;
 }
 
 .hero-section h2 {
-    font: 700 50px Quicksand;
+    font: 700 35px Quicksand;
+    margin: 270px 0 20px 0;
 }
 
 .hero-section p {
-    font: 700 25px Quicksand;
-    margin: 15px 0 80px 0;
-}
-
-.hero-section > * {
-    color: #fff;
+    font: 500 22px Quicksand;
 }
 
 /** Features Section **/
@@ -88,13 +81,15 @@ header .wrapper {
 }
 
 .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 20px;
+    padding: 0 25px;
 }
 
 .feature-card {
     text-align: center;
+}
+
+.feature-card:not(:last-child) {
+    margin-bottom: 40px;
 }
 
 .feature-card a {
@@ -109,20 +104,21 @@ header .wrapper {
     transition: all 0.3s linear;
 }
 
-.feature-card a:hover img {
+.feature-card img:hover {
     transform: scale(0.96, 0.96);
 }
 
 .feature-card h3 {
     color: #02b3e4;
     font-size: 24px;
-    margin: 25px 0;
+    margin: 20px 0;
     transition: all 0.4s ease;
 }
 
 .feature-card p {
     color: #7d97ad;
-    font-size: 18px;
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 /** Quote Section **/
@@ -132,12 +128,12 @@ header .wrapper {
 }
 
 .quote-container .wrapper {
-    padding: 40px 0;
+    padding: 25px;
     text-align: center;
 }
 
 .quote-container h2 {
-    font-size: 35px;
+    font-size: 2.2em;
     color: #2d3c49;
     margin-bottom: 20px;
 }
@@ -186,108 +182,70 @@ footer {
     font-size: 0.8em;
     color: #fff;
 }
-/** Responsive Styles - Media Queries **/
-@media screen and (max-width: 1150px) {
-  .cards-container {
-      /* grid-template-columns: repeat(1, auto); */
-      display: flex;
-      flex-direction: column;
+
+/** Responsive Styles - Media Queries - Mobile first **/
+@media screen and (min-width: 550px) {
+  header.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  .feature-card:not(:last-child) {
-    margin-bottom: 40px;
+  .header-logo {
+    margin-left: 20px;
   }
-}
 
-@media screen and (max-width: 900px) {
   .header-info {
-      padding-top: 10px;
+    margin-right: 20px;
+    text-align: right;
   }
 
-  .header-info h1 {
-      font-size: 35px;
-      margin-bottom: 5px;
-  }
-
-  .hero-section > * {
-      width: 70%;
+  .hero-section {
+    height: calc(100vh - 120px);
+    padding: 15px;
   }
 
   .hero-section h2 {
-      font-size: 40px;
+    margin-top: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .header-info h1 {
+    font-size: 38px;
+    margin: 5px 0;
+  }
+
+  .header-info h3 {
+    font-size: 22;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header-info h1 {
+    font-size: 44px;
+  }
+
+  .header-info h3 {
+    font-size: 26;
+  }
+
+  .hero-section {
+    background: #ccc url('../img/hero-photo@1x.jpg') center center / cover no-repeat;
+  }
+
+  .hero-section h2 {
+    margin-top: 400px;
+    font-size: 40px;
   }
 
   .hero-section p {
-      font-size: 20px;
+    font-size: 24px;
   }
-}
 
-@media screen and (max-width: 600px) {
-    header .wrapper {
-      display: block;
-    }
-
-    .header-logo {
-      margin: 0 auto;
-    }
-
-    .header-info > * {
-      text-align: center;
-    }
-
-    .hero-section {
-      height: calc(100vh - 226px);
-    }
-
-    .hero-section > * {
-        width: 90%;
-    }
-
-    .quote-container h2 {
-      font-size: 1.3em;
-    }
-
-    .quote-container img {
-      width: 70px;
-    }
-
-    .quote-container p {
-      font-size: 0.9em;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header-info h1 {
-      font: 500 30px Quicksand;
-    }
-
-    .header-info h3 {
-      text-align: center;
-      font-weight: 400;
-    }
-
-    .hero-section {
-      text-align: center;
-    }
-
-    .hero-section h2 {
-      font-size: 32px;
-    }
-
-    .hero-section p {
-      font-size: 18px;
-      margin-bottom: 80px;
-    }
-
-    .features {
-      padding-top: 30px;
-    }
-
-    .feature-card {
-      padding: 0 20px 0 20px;
-    }
-
-    .feature-card img {
-      width: 100%;
-    }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+  }
 }
