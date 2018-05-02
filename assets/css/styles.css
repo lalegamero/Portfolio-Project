@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: inherit;
     text-rendering: optimizeLegibility;
+    color: #2d3c49;
 }
 
 .wrapper {
@@ -47,21 +48,21 @@ header.wrapper {
     font-weight: 500;
 }
 
-/** End Header Section **/
-
 /** Hero Section **/
 .hero-section {
     background: #ccc url('../img/hero-photo@0,5x.jpg') center center / cover no-repeat;
-    height: calc(100vh - 225px);
-    color: #000;
+    height: calc(100vh - 204px);
+    color: #2d3c49;
     border-top: solid 3px #79a;
     text-align: center;
-    padding: 25px;
+    padding: 0px 25px;
+    overflow: hidden;
 }
 
 .hero-section h2 {
     font: 700 35px Quicksand;
-    margin: 270px 0 20px 0;
+    /* margin: 210px 0 20px 0; */
+    margin: 65% 0 20px 0;
 }
 
 .hero-section p {
@@ -235,7 +236,7 @@ footer {
   }
 
   .hero-section h2 {
-    margin-top: 400px;
+    margin-top: 380px;
     font-size: 40px;
   }
 
@@ -243,9 +244,28 @@ footer {
     font-size: 24px;
   }
 
+  .hero-section h2,
+  .hero-section p {
+    color: #000;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 700px) and (min-height: 1000px) {
+  .hero-section h2 {
+    margin-top: 650px;
+    font-size: 45px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 1000px) {
+  .hero-section h2 {
+    margin-top: 90%;
+    font-size: 50px;
   }
 }
